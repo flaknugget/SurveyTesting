@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <title>CSEC</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta charset="utf-8">
+        <link href="css/csec-v01.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/cse-style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.3.2.min.js"></script>
+        
+        
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery.validate.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/survey-en.js"></script>
+       
+</head>
+		
+           
+
+<body class="surveyContainer">
+<div id="surveyBG">
+<div id="surveyWrap">
+<form class="surveyForm" id="surveyForm">
+    <h1> CSEC GTEC 2013 Questionnaire </h1>
+    <h3> Thank you for visiting CSEC’s exhibit. Your feedback will help us improve
+      and prepare for future events. </h3>
+    <h4> Please let us know a little about </h4>
+        <div data-role="fieldcontain">
+          <label for="q00firstName" style="font-weight: bold; padding-top: 8px;"> First Name </label>
+          <input name="q00firstName" id="q00firstName" placeholder="" value="" type="text">
+        </div>
+        <div data-role="fieldcontain">
+          <label for="q00lastName" style="font-weight: bold; padding-top: 8px;"> Last Name </label>
+          <input name="q00lastName" id="q00lastName" placeholder="" value="" type="text">
+        </div>
+        <div data-role="fieldcontain">
+          <label for="q00email" style="font-weight: bold; padding-top: 8px;"> email </label>
+          <input name="q00email" id="q00email" placeholder="" value="" type="text">
+        </div>
+    <h4> 1. In which sector do you currently work? </h4>
+    <div id="q01-workSector" data-role="fieldcontain">
+    <label for="q01workSector" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal" style="clear:both;">
+        <input id="checkbox11" value="Federal Government" type="checkbox" name="q01workSector">
+        <label for="checkbox11"> Federal Government </label>
+        <input id="checkbox12" value="Provincial Government" type="checkbox" name="q01workSector">
+        <label for="checkbox12"> Provincial Government </label>
+        <input id="checkbox13" value="Municipal Government" type="checkbox" name="q01workSector">
+        <label for="checkbox13"> Municipal Government </label>
+        <input id="q01workSectorCheckOther" value="Other" type="checkbox" name="q01workSector">
+        <label for="q01workSectorCheckOther">Other</label>
+      </fieldset>
+    </div>
+    <div class="ui-grid-a q01WorkSectorOtherContainer">
+        <div data-role="fieldcontain">
+          <label for="q01WorkSectorOther"> Please specify: </label>
+          <input name="q01WorkSectorOther" id="q01WorkSectorOther" placeholder="" value="" type="text">
+        </div>
+    </div>
+    <h4> 2. In which field do you work? </h4>
+    <div id="q02-workField" data-role="fieldcontain">
+    <label for="q02workField" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="checkbox14" value="IT" type="checkbox" name="q02workField">
+        <label for="checkbox14"> IT </label>
+        <input id="checkbox15" value="IT Security" type="checkbox" name="q02workField">
+        <label for="checkbox15"> IT Security </label>
+        <input id="checkbox16" value="Defence" type="checkbox" name="q02workField">
+        <label for="checkbox16"> Defence </label>
+        <input id="checkbox17" value="Sales/Marketing" type="checkbox" name="q02workField">
+        <label for="checkbox17"> Sales/Marketing </label>
+        <input id="q02workField" value="Other" type="checkbox" name="q02workField">
+        <label for="q02workField"> Other </label>
+      </fieldset>
+    </div>
+    <div class="ui-grid-a q02workSectorOtherContainer">
+        <div data-role="fieldcontain">
+          <label for="q02workSectorOther"> Please specify: </label>
+          <input name="q02workSectorOther" id="q02workSectorOther" placeholder="" value="" type="text">
+        </div>
+      <div class="ui-block-b"> </div>
+    </div>
+    <h4> 3. Which category best represents your position? </h4>
+    <div id="q03-workPosition" data-role="fieldcontain">
+    <label for="q03workPosition" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="checkbox26" value="Executive" type="checkbox" name="q03workPosition">
+        <label for="checkbox26"> Executive </label>
+        <input id="checkbox27" value="Specialist" type="checkbox" name="q03workPosition">
+        <label for="checkbox27"> Specialist </label>
+        <input id="checkbox28" value="Manager" type="checkbox" name="q03workPosition">
+        <label for="checkbox28"> Manager </label>
+        <input id="q03workPosition" value="Other" type="checkbox" name="q03workPosition">
+        <label for="q03workPosition"> Other </label>
+      </fieldset>
+    </div>
+    <div class="ui-grid-a q03workPositionOtherContainer">
+        <div data-role="fieldcontain">
+          <label for="q03workPositionOther"> Please specify: </label>
+          <input name="q03workPositionOther" id="q03workPositionOther" placeholder="" value="" type="text">
+        </div>
+    </div>
+    <h4> 4. Are you familiar with the Communications Security Establishment Canada
+      (CSEC), its role and responsibilities? </h4>
+   
+        <div id="q04-familiarWithCSEC" data-role="fieldcontain">
+        <label for="q04familiarWithCSEC" class="error" generated="true"></label>
+          <fieldset data-role="controlgroup" data-type="vertical">
+            <input id="radio1" name="q04familiarWithCSEC" value="Yes, I have previous knowledge about CSEC"
+                type="radio">
+            <label for="radio1"> Yes, I have previous knowledge about CSEC </label>
+            <input id="radio2" name="q04familiarWithCSEC" value="Yes, I have learned about CSEC at the GTEC exhibit "
+                type="radio">
+            <label for="radio2"> Yes, I have learned about CSEC at the GTEC exhibit </label>
+            <input id="radio3" name="q04familiarWithCSEC" value="No, I am not familiar with CSEC" type="radio">
+            <label for="radio3"> No, I am not familiar with CSEC </label>
+          </fieldset>
+        
+    </div>
+    <h4> 5. Are you aware of CSEC’s IT Security Learning Centre and the training
+      services it provides? </h4>
+    <div id="q05-familiarWithCSECLearning" data-role="fieldcontain">
+    <label for="q05familiarWithCSECLearning" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio5" name="q05familiarWithCSECLearning" value="Yes" type="radio">
+        <label for="radio5"> Yes </label>
+        <input id="radio6" name="q05familiarWithCSECLearning" value="No" type="radio">
+        <label for="radio6"> No </label>
+      </fieldset>
+    </div>
+    <h4> 6. Are you interested in a career at CSEC? </h4>
+    <div id="q06-careerCSEC" data-role="fieldcontain">
+    <label for="q06careerCSEC" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio7" name="q06careerCSEC" value="Yes" type="radio">
+        <label for="radio7"> Yes </label>
+        <input id="radio8" name="q06careerCSEC" value="No" type="radio">
+        <label for="radio8"> No </label>
+      </fieldset>
+    </div>
+    <h4> 7. Have you implemented, or will you consider implementing CSEC’s Top
+      4 Mitigation Measures? </h4>
+    <div id="q07-implementCSEC" data-role="fieldcontain">
+    <label for="q07implementCSEC" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio9" name="q07implementCSEC" value="Yes" type="radio">
+        <label for="radio9"> Yes </label>
+        <input id="radio10" name="q07implementCSEC" value="No" type="radio">
+        <label for="radio10"> No </label>
+        <input id="radio11" name="q07implementCSEC" value="I am not familiar with the Top 4 Mitigation Measures "
+                type="radio">
+        <label for="radio11"> I am not familiar with the Top 4 Mitigation Measures </label>
+      </fieldset>
+    </div>
+    <h4> 8. If you have browsed CSEC’s IT security publications, do you find them
+      useful for your job function? </h4>
+    <div id="q08-usefulPubs" data-role="fieldcontain">
+    <label for="q08usefulPubs" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="q08usefulPubsYes" name="q08usefulPubs" value="Yes" type="radio">
+        <label for="q08usefulPubsYes"> Yes </label>
+        <input id="q08usefulPubsNo" name="q08usefulPubs" value="No" type="radio">
+        <label for="q08usefulPubsNo"> No </label>
+        <input id="q08usefulPubsNot" name="q08usefulPubs" value="Not applicable" type="radio">
+        <label for="q08usefulPubsNot"> Not applicable </label>
+      </fieldset>
+    </div>
+        <div data-role="fieldcontain" class="q08usefulPubsWhyContainer">
+          <label for="q08usefulPubsWhy"> If no, why? </label>
+          <input name="q08usefulPubsWhy" id="q08usefulPubsWhy" placeholder="" value="" type="text">
+        </div>
+        <div data-role="fieldcontain">
+          <label for="q08usefulPubsTopics"> What other topics would you be interested in reading about? </label>
+          <input name="q08usefulPubsTopics" id="q08usefulPubsTopics" placeholder="" value="" type="text">
+        
+    </div>
+    <h4> 9. Will you attend a CSEC presentation at GTEC 2013? </h4>
+
+        <div id="q09-presentations" data-role="fieldcontain">
+          <fieldset data-role="controlgroup" data-type="vertical">
+            <input id="checkbox29" value="Keynote session: Cyber Security and the Government of Canada, presented by John Forster "
+                type="checkbox" name="q09presentations">
+            <label for="checkbox29">
+            Keynote session: Cyber Security and the Government of Canada, presented
+            by John Forster
+            <div style="clear:both;"></div>
+            <span style="font-weight: 300;">Wednesday – October 9, location, 9:30 am</span>
+            </label>
+            <input id="checkbox30" value="Concurrent session: Cyber Intrusion Instant Replay"
+                type="checkbox" name="q09presentations">
+            <label for="checkbox30">
+            Concurrent session: Cyber Intrusion Instant Replay
+            <div style="clear:both;"></div>
+            <span style="font-weight: 300;">Wednesday – October
+            9, location, 2:00 pm</span>
+            </label>
+          </fieldset>
+       
+    </div>
+    <h4> 10. The information presented by CSEC at GTEC 2013 was useful. </h4>
+    <div id="q10-usefulInfo" data-role="fieldcontain">
+    <label for="q10usefulInfo" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio15" name="q10usefulInfo" value="Strongly disagree" type="radio">
+        <label for="radio15"> Strongly disagree </label>
+        <input id="radio16" name="q10usefulInfo" value="Disagree" type="radio">
+        <label for="radio16"> Disagree </label>
+        <input id="radio17" name="q10usefulInfo" value="Neutral" type="radio">
+        <label for="radio17"> Neutral </label>
+        <input id="radio18" name="q10usefulInfo" value="Agree" type="radio">
+        <label for="radio18"> Agree </label>
+        <input id="radio19" name="q10usefulInfo" value="Strongly agree" type="radio">
+        <label for="radio19"> Strongly agree </label>
+      </fieldset>
+    </div>
+    <h4> 11. The CSEC booth staff at GTEC 2013 were helpful. </h4>
+    <div id="q11-helpfulStaff" data-role="fieldcontain">
+    <label for="q11helpfulStaff" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio20" name="q11helpfulStaff" value="Strongly disagree" type="radio">
+        <label for="radio20"> Strongly disagree </label>
+        <input id="radio21" name="q11helpfulStaff" value="Disagree" type="radio">
+        <label for="radio21"> Disagree </label>
+        <input id="radio22" name="q11helpfulStaff" value="Neutral" type="radio">
+        <label for="radio22"> Neutral </label>
+        <input id="radio23" name="q11helpfulStaff" value="Agree" type="radio">
+        <label for="radio23"> Agree </label>
+        <input id="radio24" name="q11helpfulStaff" value="Strongly agree" type="radio">
+        <label for="radio24"> Strongly agree </label>
+      </fieldset>
+    </div>
+    <h4> 12. I am concerned about cyber security. </h4>
+    <div id="q12-concernedCyberSecurity" data-role="fieldcontain">
+    <label for="q12concernedCyberSecurity" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio25" name="q12concernedCyberSecurity" value="Strongly disagree" type="radio">
+        <label for="radio25"> Strongly disagree </label>
+        <input id="radio26" name="q12concernedCyberSecurity" value="Disagree" type="radio">
+        <label for="radio26"> Disagree </label>
+        <input id="radio27" name="q12concernedCyberSecurity" value="Neutral" type="radio">
+        <label for="radio27"> Neutral </label>
+        <input id="radio28" name="q12concernedCyberSecurity" value="Agree" type="radio">
+        <label for="radio28"> Agree </label>
+        <input id="radio29" name="q12concernedCyberSecurity" value="Strongly agree" type="radio">
+        <label for="radio29"> Strongly agree </label>
+      </fieldset>
+    </div>
+    <h4> 13. I am concerned about mobile security. </h4>
+    <div id="q13-concernedMobileSecurity" data-role="fieldcontain">
+    <label for="q13concernedMobileSecurity" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio30" name="q13concernedMobileSecurity" value="Strongly disagree" type="radio">
+        <label for="radio30"> Strongly disagree </label>
+        <input id="radio31" name="q13concernedMobileSecurity" value="Disagree" type="radio">
+        <label for="radio31"> Disagree </label>
+        <input id="radio32" name="q13concernedMobileSecurity" value="Neutral" type="radio">
+        <label for="radio32"> Neutral </label>
+        <input id="radio33" name="q13concernedMobileSecurity" value="Agree" type="radio">
+        <label for="radio33"> Agree </label>
+        <input id="radio34" name="q13concernedMobileSecurity" value="Strongly agree" type="radio">
+        <label for="radio34"> Strongly agree </label>
+      </fieldset>
+    </div>
+    <h4> 14. I am concerned about social media security. </h4>
+    <div id="q14-concernedSocialSecurity" data-role="fieldcontain">
+    <label for="q14concernedSocialSecurity" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio35" name="q14concernedSocialSecurity" value="Strongly disagree" type="radio">
+        <label for="radio35"> Strongly disagree </label>
+        <input id="radio36" name="q14concernedSocialSecurity" value="Disagree" type="radio">
+        <label for="radio36"> Disagree </label>
+        <input id="radio37" name="q14concernedSocialSecurity" value="Neutral" type="radio">
+        <label for="radio37"> Neutral </label>
+        <input id="radio38" name="q14concernedSocialSecurity" value="Agree" type="radio">
+        <label for="radio38"> Agree </label>
+        <input id="radio39" name="q14concernedSocialSecurity" value="Strongly agree" type="radio">
+        <label for="radio39"> Strongly agree </label>
+      </fieldset>
+    </div>
+    <h4> 15. Following this event, will you visit the CSEC event website for more
+      information? </h4>
+    <div id="q15-visitCSEC" data-role="fieldcontain">
+    <label for="q15visitCSEC" class="error" generated="true"></label>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <input id="radio40" name="q15visitCSEC" value="Yes" type="radio">
+        <label for="radio40"> Yes </label>
+        <input id="radio41" name="q15visitCSEC" value="No" type="radio">
+        <label for="radio41"> No </label>
+      </fieldset>
+    </div>
+    <h4> 16. Please share with us topics you would be interested in learning about
+      from CSEC, or recommendations for future events. </h4>
+    <div data-role="fieldcontain">
+      <textarea name="q16recommendations" id="q16recommendations" placeholder=""></textarea>
+    </div>
+    <input id="outputBtn" name="btnSubmit" type="submit" data-icon="arrow-r" data-iconpos="left" value="Submit">
+    <!-- /content -->
+  </form>
+  
+  <input id="btnGetFile" name="btnSubmit" type="submit" data-icon="arrow-r" data-iconpos="left" value="Read File">
+  <p><span id="output"></span></p>
+  </div>
+  </div>
+</body>
+</html>
