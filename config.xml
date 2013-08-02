@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
-    id        = "com.banfield.csec.v01"
+    id        = "com.banfield.surveytest.v01"
     version   = "1.0.0">
 
 <name>Survey Testing</name>
