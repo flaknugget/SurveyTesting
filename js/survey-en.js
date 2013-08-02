@@ -228,6 +228,7 @@ document.addEventListener('deviceready', deviceReady, false);
 				function gotFileWriter(writer) {
 					writer.seek(writer.length);
    					writer.write(output);
+					alert("write file");
 				}
 				
 				function fail(evt) {
@@ -237,3 +238,6 @@ document.addEventListener('deviceready', deviceReady, false);
 					}
 					$("#fileResult").append("</span><br />");
 				}
+				
+				
+				
