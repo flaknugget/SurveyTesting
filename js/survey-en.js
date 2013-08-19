@@ -236,6 +236,6 @@ document.addEventListener('deviceready', deviceReady, false);
 						}
 					
 						function fail(error) {
-							console.log(error.code);
+							alert("failed to write file");
 						}
 				
