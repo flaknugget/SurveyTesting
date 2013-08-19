@@ -65,7 +65,6 @@ document.addEventListener('deviceready', deviceReady, false);
 			}
 			
 			function validateForm() {
-				alert("validate");
 				jQuery.validator.setDefaults({
 				  debug: true,
 				  success: "valid"
@@ -216,15 +215,17 @@ document.addEventListener('deviceready', deviceReady, false);
 						//
 						
 					
-						function gotFS(fileSystem) {
-							fileSystem.root.getFile("surveyOutput-aug19.html", {create: true, exclusive: false}, gotFileEntry, fail);
+						function gotFS(fileSystem, output) {
+							fileSystem.root.getFile("surveyOutput-aug19.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+							alert("gotFS");
 						}
 					
-						function gotFileEntry(fileEntry) {
+						function gotFileEntry(fileEntry, output) {
 							fileEntry.createWriter(gotFileWriter, fail);
+							alert("gotFileEntry");
 						}
 					
-						function gotFileWriter(writer) {
+						function gotFileWriter(writer, output) {
 							writer.onwriteend = function(evt) {								
 								writer.onwriteend = function(evt) {
 									writer.seek(writer.length);
@@ -232,7 +233,7 @@ document.addEventListener('deviceready', deviceReady, false);
 								};
 							};
 							writer.write(output);							
-							alert("file written");
+							alert("gotFileWriter");
 						}
 					
 						function fail(error) {
