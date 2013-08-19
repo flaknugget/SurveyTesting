@@ -1,5 +1,8 @@
 // JavaScript Document
 
+
+var output;
+
 document.addEventListener('deviceready', deviceReady, false);
 		 
 		 $( document ).ready(function() {
@@ -193,7 +196,7 @@ document.addEventListener('deviceready', deviceReady, false);
 											var q14concernedSocialSecurity = $("input:radio[name=q14concernedSocialSecurity]:checked").val();
 											var q15visitCSEC = $("input:radio[name=q15visitCSEC]:checked").val();
 											var q16recommendations = $("#q16recommendations").val();
-											var output = "<tr><td>"+q00firstName+" "+q00lastName+"</td><td>"+q00email+"</td><td>"+language+"</td><td>"+q01workSector+"<br /><br />"+q01WorkSectorOther+"</td><td>"+q02workField+"<br /><br />"+q02workSectorOther+"</td><td>"+q03workPosition+"<br /><br />"+q03workPositionOther+"</td><td>"+q04familiarWithCSEC+"</td><td>"+q05familiarWithCSECLearning+"</td><td>"+q06careerCSEC+"</td><td>"+q07implementCSEC+"</td><td>"+q08usefulPubs+"<br /><br />"+q08usefulPubsWhy+"<br /><br />"+q08usefulPubsTopics+"</td><td>"+q09presentations+"</td><td>"+q10usefulInfo+"</td><td>"+q11helpfulStaff+"</td><td>"+q12concernedCyberSecurity+"</td><td>"+q13concernedMobileSecurity+"</td><td>"+q14concernedSocialSecurity+"</td><td>"+q15visitCSEC+"</td><td>"+q16recommendations+"</td></tr>";
+											output = "<tr><td>"+q00firstName+" "+q00lastName+"</td><td>"+q00email+"</td><td>"+language+"</td><td>"+q01workSector+"<br /><br />"+q01WorkSectorOther+"</td><td>"+q02workField+"<br /><br />"+q02workSectorOther+"</td><td>"+q03workPosition+"<br /><br />"+q03workPositionOther+"</td><td>"+q04familiarWithCSEC+"</td><td>"+q05familiarWithCSECLearning+"</td><td>"+q06careerCSEC+"</td><td>"+q07implementCSEC+"</td><td>"+q08usefulPubs+"<br /><br />"+q08usefulPubsWhy+"<br /><br />"+q08usefulPubsTopics+"</td><td>"+q09presentations+"</td><td>"+q10usefulInfo+"</td><td>"+q11helpfulStaff+"</td><td>"+q12concernedCyberSecurity+"</td><td>"+q13concernedMobileSecurity+"</td><td>"+q14concernedSocialSecurity+"</td><td>"+q15visitCSEC+"</td><td>"+q16recommendations+"</td></tr>";
 											
 											// var output = "<tr><td>"+q00firstName+" "+q00lastName+"</td><td>"+q00email+"</td><td>"+language+"</td><td>";
 											
@@ -215,25 +218,25 @@ document.addEventListener('deviceready', deviceReady, false);
 						//
 						
 					
-						function gotFS(fileSystem, output) {
+						function gotFS(fileSystem) {
 							fileSystem.root.getFile("surveyOutput-aug19.txt", {create: true, exclusive: false}, gotFileEntry, fail);
 							alert("gotFS");
 						}
 					
-						function gotFileEntry(fileEntry, output) {
+						function gotFileEntry(fileEntry) {
 							fileEntry.createWriter(gotFileWriter, fail);
 							alert("gotFileEntry");
 						}
 					
-						function gotFileWriter(writer, output) {
+						function gotFileWriter(writer) {
 							writer.onwriteend = function(evt) {								
 								writer.onwriteend = function(evt) {
 									writer.seek(writer.length);
-									writer.write(output);									
+									writer.write(window.output);									
 								};
 							};
 							writer.write(output);							
-							alert("gotFileWriter");
+							alert("gotFileWriter" + window.output);
 						}
 					
 						function fail(error) {
