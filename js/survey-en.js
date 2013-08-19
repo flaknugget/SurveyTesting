@@ -74,8 +74,8 @@ document.addEventListener('deviceready', deviceReady, false);
 				
 			$("#surveyForm").validate({
 			debug: true,
-			rules: { /*
-				q00firstName: {
+			rules: {
+				/* q00firstName: {
 					required: true,
 					minlength: 2
 				},
@@ -201,11 +201,19 @@ document.addEventListener('deviceready', deviceReady, false);
 											
 											$("#output").append(output);
 								
-								
-											alert(output);
-											writeFS();
-				
-				
+											window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function() {
+												
+												fileSystem.root.getFile("survey-output.html", {create: true, exclusive: false}, function() {
+														fileEntry.createWriter(function() {
+																writer.seek(writer.length);
+																writer.write(output);
+															}, fail);
+													}, fail);
+												
+												}, fail);
+											
+											
+											alert("file written"+output);
 				
 				
 						
@@ -213,31 +221,4 @@ document.addEventListener('deviceready', deviceReady, false);
 						}
 						
 						
-				function writeFS(fileSystem) {
-					window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotWriteFS, fail);
-				}
-				 
-				function gotWriteFS(fileSystem) {
-					fileSystem.root.getFile("survey-output.html", {create: true, exclusive: false}, gotWriteFileEntry, fail);
-				}
-			
-				function gotWriteFileEntry(fileEntry) {
-					fileEntry.createWriter(gotFileWriter, fail);
-				}
-			
-				function gotFileWriter(writer) {
-					writer.seek(writer.length);
-   					writer.write(output);
-					alert("write file");
-				}
-				
-				function fail(evt) {
-					$("#fileResult").append("<span class='error'>Error");
-					if (evt != undefined && evt.target != undefined && evt.target.error != undefined) {
-						$("#fileResult").append(evt.target.error.code);
-					}
-					$("#fileResult").append("</span><br />");
-				}
-				
-				
 				
