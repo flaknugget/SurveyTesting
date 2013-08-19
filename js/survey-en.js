@@ -201,7 +201,7 @@ document.addEventListener('deviceready', deviceReady, false);
 											
 											$("#output").append(output);
 								
-											window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function() {
+											/* window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function() {
 												
 												fileSystem.root.getFile("survey-output.html", {create: true, exclusive: false}, function() {
 														fileEntry.createWriter(function() {
@@ -210,7 +210,7 @@ document.addEventListener('deviceready', deviceReady, false);
 															}, fail);
 													}, fail);
 												
-												}, fail);
+												}, fail); */
 											
 											
 											alert("file written"+output);
