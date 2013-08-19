@@ -199,21 +199,11 @@ document.addEventListener('deviceready', deviceReady, false);
 											// var output = "<tr><td>"+q00firstName+" "+q00lastName+"</td><td>"+q00email+"</td><td>"+language+"</td><td>";
 											
 											
-											$("#output").append(output);
-								
-											/* window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function() {
-												
-												fileSystem.root.getFile("survey-output.html", {create: true, exclusive: false}, function() {
-														fileEntry.createWriter(function() {
-																writer.seek(writer.length);
-																writer.write(output);
-															}, fail);
-													}, fail);
-												
-												}, fail); */
+											$("#output").append(output);					
+									
+											window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 											
-											
-											alert("file written"+output);
+											alert(output);
 				
 				
 						
@@ -221,4 +211,31 @@ document.addEventListener('deviceready', deviceReady, false);
 						}
 						
 						
+
+						// device APIs are available
+						//
+						
+					
+						function gotFS(fileSystem) {
+							fileSystem.root.getFile("surveyOutput-aug19.html", {create: true, exclusive: false}, gotFileEntry, fail);
+						}
+					
+						function gotFileEntry(fileEntry) {
+							fileEntry.createWriter(gotFileWriter, fail);
+						}
+					
+						function gotFileWriter(writer) {
+							writer.onwriteend = function(evt) {								
+								writer.onwriteend = function(evt) {
+									writer.seek(writer.length);
+									writer.write(output);									
+								};
+							};
+							writer.write(output);							
+							alert("file written");
+						}
+					
+						function fail(error) {
+							console.log(error.code);
+						}
 				
