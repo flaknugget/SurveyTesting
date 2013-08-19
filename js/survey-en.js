@@ -175,11 +175,11 @@ document.addEventListener('deviceready', deviceReady, false);
 											var q00firstName = $("#q00firstName").val();
 											var q00lastName = $("#q00lastName").val();
 											var q00email = $("#q00email").val();
-											var q01workSector = $("[name=q01workSector]:checked").map(function() {return this.value;}).get().join(",");
+											var q01workSector = $("[name=q01workSector]:checked").map(function() {return this.value;}).get().join(", ");
 											var q01WorkSectorOther = $("#q01WorkSectorOther").val();
-											var q02workField = $("[name=q02workField]:checked").map(function() {return this.value;}).get().join(",");
+											var q02workField = $("[name=q02workField]:checked").map(function() {return this.value;}).get().join(", ");
 											var q02workSectorOther = $("#q02workSectorOther").val();
-											var q03workPosition = $("[name=q03workPosition]:checked").map(function() {return this.value;}).get().join(",");
+											var q03workPosition = $("[name=q03workPosition]:checked").map(function() {return this.value;}).get().join(", ");
 											var q03workPositionOther = $("#q03workPositionOther").val();
 											var q04familiarWithCSEC = $("input:radio[name=q04familiarWithCSEC]:checked").val();
 											var q05familiarWithCSECLearning = $("input:radio[name=q05familiarWithCSECLearning]:checked").val();
@@ -219,7 +219,7 @@ document.addEventListener('deviceready', deviceReady, false);
 						
 					
 						function gotFS(fileSystem) {
-							fileSystem.root.getFile("surveyOutput-aug19.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+							fileSystem.root.getFile("surveyOutput-aug19.txt", {create: false}, gotFileEntry, fail);
 							alert("gotFS");
 						}
 					
@@ -228,14 +228,9 @@ document.addEventListener('deviceready', deviceReady, false);
 							alert("gotFileEntry");
 						}
 					
-						function gotFileWriter(writer) {
-							writer.onwriteend = function(evt) {								
-								writer.onwriteend = function(evt) {
-									writer.seek(writer.length);
-									writer.write(window.output);									
-								};
-							};
-							writer.write(output);							
+						function gotFileWriter(writer) {							
+							writer.seek(writer.length);
+							writer.write(window.output);							
 							alert("gotFileWriter" + window.output);
 						}
 					
