@@ -6,13 +6,87 @@
     <script type="text/javascript" charset="utf-8" src="js/jquery.1.8.2.min.js"></script>
       
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8" src="GAPlugin.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/jquery.validate.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/survey-en.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/ganalytics.js"></script>
+	<script type="text/javascript">
+		var gaPlugin;
+		var output;
 
+		document.addEventListener('deviceready', deviceReady, false);
+		 
+		 $( document ).ready(function() {
+			 deviceReady();
+		 });
+			
+			
+			
+            function deviceReady() {
+				
+				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-43302718-1", 60);
+				
+				
+				$("#hidethis").hide();
+				$(".q01WorkSectorOtherContainer").hide();
+				$(".q02workSectorOtherContainer").hide();
+				$(".q03workPositionOtherContainer").hide();
+				$(".q08usefulPubsWhyContainer").hide();
+				
+				$("#q01workSectorCheckOther").bind("click", function() {
+						if ($('#q01workSectorCheckOther').is(':checked')) {
+							$(".q01WorkSectorOtherContainer").show();
+						} else {
+							$(".q01WorkSectorOtherContainer").hide();
+						};
+				});
+				
+				
+				$("#q02workField").bind("click", function() {
+					if ($('#q02workField').is(':checked')) {
+						$(".q02workSectorOtherContainer").show();
+					} else {
+						$(".q02workSectorOtherContainer").hide();
+					};
+				});
+				
+				
+				$("#q03workPosition").bind("click", function() {
+					if ($('#q03workPosition').is(':checked')) {
+						$(".q03workPositionOtherContainer").show();
+					} else {
+						$(".q03workPositionOtherContainer").hide();
+					};
+				});
+				
+				
+				$("#q08usefulPubsNo").bind("click", function() {
+						$(".q08usefulPubsWhyContainer").show();
+				});
+				
+				$("#q08usefulPubsYes").bind("click", function() {
+						$(".q08usefulPubsWhyContainer").hide();
+				});
+				
+				$("#q08usefulPubsNot").bind("click", function() {
+						$(".q08usefulPubsWhyContainer").hide();
+				});
+				
+				
+				
+				
+				
+				$("#outputBtn").bind("click", validateForm);
+				
+			
+			}
+		
+		
+	</script>
     
 </head>
-  <body>
-  <a href="file.html">Working Page</a>
+  <body onunload="goingAway();">
+  <a href="file.html" onclick="PageButtonClicked();">Working Page</a>
     <form class="surveyForm" id="surveyForm">
     <h1> CSEC GTEC 2013 Questionnaire </h1>
     <h3> Thank you for visiting CSEC’s exhibit. Your feedback will help us improve
@@ -286,7 +360,7 @@
     <div data-role="fieldcontain">
       <textarea name="q16recommendations" id="q16recommendations" placeholder=""></textarea>
     </div>
-    <input id="outputBtn" name="btnSubmit" type="submit" data-icon="arrow-r" data-iconpos="left" value="Submit">
+    <input id="outputBtn" onclick="TrackButtonClicked();" name="btnSubmit" type="submit" data-icon="arrow-r" data-iconpos="left" value="Submit">
     <!-- /content -->
   </form>
   

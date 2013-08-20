@@ -1,71 +1,7 @@
 // JavaScript Document
 
 
-var output;
 
-document.addEventListener('deviceready', deviceReady, false);
-		 
-		 $( document ).ready(function() {
-			 deviceReady();
-		 });
-			
-			
-			
-            function deviceReady() {
-				
-				$("#hidethis").hide();
-				$(".q01WorkSectorOtherContainer").hide();
-				$(".q02workSectorOtherContainer").hide();
-				$(".q03workPositionOtherContainer").hide();
-				$(".q08usefulPubsWhyContainer").hide();
-				
-				$("#q01workSectorCheckOther").bind("click", function() {
-						if ($('#q01workSectorCheckOther').is(':checked')) {
-							$(".q01WorkSectorOtherContainer").show();
-						} else {
-							$(".q01WorkSectorOtherContainer").hide();
-						};
-				});
-				
-				
-				$("#q02workField").bind("click", function() {
-					if ($('#q02workField').is(':checked')) {
-						$(".q02workSectorOtherContainer").show();
-					} else {
-						$(".q02workSectorOtherContainer").hide();
-					};
-				});
-				
-				
-				$("#q03workPosition").bind("click", function() {
-					if ($('#q03workPosition').is(':checked')) {
-						$(".q03workPositionOtherContainer").show();
-					} else {
-						$(".q03workPositionOtherContainer").hide();
-					};
-				});
-				
-				
-				$("#q08usefulPubsNo").bind("click", function() {
-						$(".q08usefulPubsWhyContainer").show();
-				});
-				
-				$("#q08usefulPubsYes").bind("click", function() {
-						$(".q08usefulPubsWhyContainer").hide();
-				});
-				
-				$("#q08usefulPubsNot").bind("click", function() {
-						$(".q08usefulPubsWhyContainer").hide();
-				});
-				
-				
-				
-				
-				
-				$("#outputBtn").bind("click", validateForm);
-				
-			
-			}
 			
 			function validateForm() {
 				jQuery.validator.setDefaults({

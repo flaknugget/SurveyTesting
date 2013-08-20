@@ -20,6 +20,7 @@ Peter Adamson
     -->
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="http://api.phonegap.com/1.0/file" />
+	<feature name="http://api.phonegap.com/1.0/network" />
 
     <!--
         If you do not want any permissions to be added to your app, add the
@@ -50,6 +51,8 @@ Peter Adamson
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
+
+	<gap:plugin name="com.adobe.plugins.gaplugin" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
