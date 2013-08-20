@@ -27,8 +27,12 @@
 			
 			
 			function nativePluginResultHandler (result) {
-				//alert('nativePluginResultHandler - '+result);
-				console.log('nativePluginResultHandler: '+result);
-				alert('nativePluginResultHandler: '+result);
+				alert("nativePluginResultHandler - "+result);
+				console.log("nativePluginResultHandler: "+result);
 
+			}
+			
+			function nativePluginErrorHandler (error) {
+				alert('nativePluginErrorHandler - '+error);
+				console.log('nativePluginErrorHandler: '+error);
 			}
