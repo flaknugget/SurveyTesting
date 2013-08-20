@@ -33,6 +33,6 @@
 			}
 			
 			function nativePluginErrorHandler (error) {
-				alert('nativePluginErrorHandler - '+error);
+				alert("nativePluginErrorHandler - "+error);
 				//console.log('nativePluginErrorHandler: '+error);
 			}
