@@ -15,31 +15,23 @@
 		}
 	</style>
 	
-    <script type="text/javascript" charset="utf-8" src="js/jquery.1.8.2.min.js"></script>
-      
+    <script type="text/javascript" charset="utf-8" src="js/jquery.1.8.2.min.js"></script>      
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8" src="GAPlugin.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/survey-en.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/ganalytics.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/timer.js"></script>
     
 	<script type="text/javascript">
-		
-		
+	
 
-		document.addEventListener('deviceready', deviceReady, false);
+	document.addEventListener('deviceready', deviceReady, false);
 		 
-		 $( document ).ready(function() {
-			 deviceReady();
-		 });
-			
-			
-			
-            function deviceReady() {
-				// Start Timeout Timer
-				timerStart();
-				
-				// Initialize Google Analytics for the page
+	$( document ).ready(function() {
+		deviceReady();
+	});
+	
+	function deviceReady() {
+		// Initialize Google Analytics for the page
 				gaPlugin = window.plugins.gaPlugin;
 				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-43302718-1", 60);
 				
@@ -51,17 +43,21 @@
 					window.buttonTitle = $(this).attr("title");
 					trackClickByTitle();
 				});
-				
-			}
 		
 		
+		timerStart();	
+		$('#timeoutBox').hide();
+		$('html').click(timerReset);
+		
+		
+	}
 	</script>
     
 </head>
   <body>
-    <a href="index.html" class="trackButton">Home</a><br>
-  <a href="index-title-testing.html" class="trackButton">Working Page</a><br>
-  <a href="timer-test.html" class="trackButton">Timer Page</a><br>
+  <a href="index.html" class="trackButton" title="English - Main Menu - Hotel Lobby (travel)">Home</a><br>
+  <a href="index-title-testing.html" class="trackButton" title="English - Hotel Lobby (travel) - Best Practices">Working Page</a><br>
+  <a href="timer-test.html" class="trackButton" title="English - Hotel Lobby (travel) - Best Practices - IT Practicioners">Timer Page</a><br>
   <p class="output"></p>
   <div id="timeoutBox"><p>Please Click Anywhere to Continue</p><p><span class="countDownTimer">20</span></p></div>
   </body>
