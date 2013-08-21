@@ -1,6 +1,6 @@
 // JavaScript Document
 
-
+			var output;
 
 			
 			function validateForm() {

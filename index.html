@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FileWriter Example</title>
+    <title>Survey Testing - Home</title>
 	
     <script type="text/javascript" charset="utf-8" src="js/jquery.1.8.2.min.js"></script>
       
@@ -10,9 +10,11 @@
     <script type="text/javascript" charset="utf-8" src="js/jquery.validate.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/survey-en.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/ganalytics.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/timer.js"></script>
+    
 	<script type="text/javascript">
-		var gaPlugin;
-		var output;
+		
+		
 
 		document.addEventListener('deviceready', deviceReady, false);
 		 
@@ -23,8 +25,21 @@
 			
 			
             function deviceReady() {
+				// Start Timeout Timer
+				timerStart();
+				
+				// Initialize Google Analytics for the page
 				gaPlugin = window.plugins.gaPlugin;
 				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-43302718-1", 60);
+				
+				
+				// Setup tracking for the page and for click events
+				trackPageByTitle();				
+				$('.trackButton').click(function() {
+					var buttonTitle
+					window.buttonTitle = $(this).attr("title");
+					trackClickByTitle();
+				});
 				
 				
 				$("#hidethis").hide();
@@ -85,8 +100,10 @@
 	</script>
     
 </head>
-  <body onunload="goingAway();">
-  <a href="file.html" onclick="PageButtonClicked();">Working Page</a>
+  <body>
+  <a href="index.html" class="trackButton">Home</a><br>
+  <a href="index-title-testing.html" class="trackButton">Working Page</a><br>
+  <a href="timer-test.html" class="trackButton">Timer Page</a><br>
     <form class="surveyForm" id="surveyForm">
     <h1> CSEC GTEC 2013 Questionnaire </h1>
     <h3> Thank you for visiting CSEC’s exhibit. Your feedback will help us improve
