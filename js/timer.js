@@ -5,6 +5,7 @@ var timeOutCounter;
 
 function timerStart()
 	{
+		countDownToTimeoutStop();
 		timeOutCounter=setTimeout(timerEnd, 3000);
 		$('.output').append('timerStart<br>');
 	}
@@ -14,25 +15,29 @@ function timerStop()
 		clearTimeout(timeOutCounter);
 		countDownToTimeoutStop();
 		$('.output').append('timerStop<br>');
+		$('#timeoutBox').css("background-color","red");
 	}
 	
 function timerReset()
 	{
+		$('#timeoutBox').css("background-color","red");
 		countDownToTimeoutStop();
 		clearTimeout(timeOutCounter);
-		countDownToTimeoutStop();
 		timeOutCounter=setTimeout(timerEnd, 3000);
 		$('.output').append('timerReset<br>');
+		
 	}
 	
 function timerEnd()	
 	{
 		$('.output').append('<strong>Count Down has Ended</strong><br>');		
 		
-		window.countDownCount=21;
-		$('.countDownCount').html(window.countDownCount);
-		$('#timeoutBox').fadeIn();
-		var countDownTimer=setInterval(function(){countDownToTimeout()},1000);
+		window.countDownCount=10;
+		$('.countDownTimer').html(window.countDownCount);
+		countDownToTimeoutStop();
+		window.countDownTimer=setInterval(function(){countDownToTimeout()},1000);
+		$('#timeoutBox').fadeIn();		
+		
 		
 	}
 
@@ -40,6 +45,7 @@ function countDownToTimeoutStop()
 	{	
 		window.clearInterval(window.countDownTimer);
 		$('#timeoutBox').fadeOut();	
+		$('#timeoutBox').css("background-color","red");
 	}
 	
 function countDownToTimeout()
@@ -49,8 +55,6 @@ function countDownToTimeout()
 		
 		if (window.countDownCount<0) {
 			$('.countDownTimer').html('Time Out Complete');
-			$('#timeoutBox').css("background-color","green");
-			countDownToTimeoutStop();
-			
+			$('#timeoutBox').css("background-color","green");			
 		}
 	}
