@@ -107,7 +107,10 @@
 			
 			function outputForm() {
 				
-						var language = "English";
+											var currentdate = new Date(); 
+											var datetime = currentdate.getDate()+"/"+(currentdate.getMonth()+1)+"/"+currentdate.getFullYear()+" @ "+currentdate.getHours()+":"+currentdate.getMinutes()+":"+currentdate.getSeconds();
+													
+											var language = "English";
 											var q00firstName = $("#q00firstName").val();
 											var q00lastName = $("#q00lastName").val();
 											var q00email = $("#q00email").val();
@@ -131,8 +134,14 @@
 											var q13concernedMobileSecurity = $("input:radio[name=q13concernedMobileSecurity]:checked").val();
 											var q14concernedSocialSecurity = $("input:radio[name=q14concernedSocialSecurity]:checked").val();
 											var q15visitCSEC = $("input:radio[name=q15visitCSEC]:checked").val();
+											if (typeof q15visitCSEC==='undefined') {
+												q15visitCSEC = "&nbsp;";
+												alert(q15visitCSEC);	
+												alert($("input:radio[name=q15visitCSEC]:checked").val());
+											};
+											
 											var q16recommendations = $("#q16recommendations").val();
-											output = "<tr><td>"+q00firstName+" "+q00lastName+"</td><td>"+q00email+"</td><td>"+language+"</td><td>"+q01workSector+"<br /><br />"+q01WorkSectorOther+"</td><td>"+q02workField+"<br /><br />"+q02workSectorOther+"</td><td>"+q03workPosition+"<br /><br />"+q03workPositionOther+"</td><td>"+q04familiarWithCSEC+"</td><td>"+q05familiarWithCSECLearning+"</td><td>"+q06careerCSEC+"</td><td>"+q07implementCSEC+"</td><td>"+q08usefulPubs+"<br /><br />"+q08usefulPubsWhy+"<br /><br />"+q08usefulPubsTopics+"</td><td>"+q09presentations+"</td><td>"+q10usefulInfo+"</td><td>"+q11helpfulStaff+"</td><td>"+q12concernedCyberSecurity+"</td><td>"+q13concernedMobileSecurity+"</td><td>"+q14concernedSocialSecurity+"</td><td>"+q15visitCSEC+"</td><td>"+q16recommendations+"</td></tr>";
+											output = "<tr><td>"+datetime+"</td><td>"+q00firstName+" "+q00lastName+"</td><td>"+q00email+"</td><td>"+language+"</td><td>"+q01workSector+"<br /><br />"+q01WorkSectorOther+"</td><td>"+q02workField+"<br /><br />"+q02workSectorOther+"</td><td>"+q03workPosition+"<br /><br />"+q03workPositionOther+"</td><td>"+q04familiarWithCSEC+"</td><td>"+q05familiarWithCSECLearning+"</td><td>"+q06careerCSEC+"</td><td>"+q07implementCSEC+"</td><td>"+q08usefulPubs+"<br /><br />"+q08usefulPubsWhy+"<br /><br />"+q08usefulPubsTopics+"</td><td>"+q09presentations+"</td><td>"+q10usefulInfo+"</td><td>"+q11helpfulStaff+"</td><td>"+q12concernedCyberSecurity+"</td><td>"+q13concernedMobileSecurity+"</td><td>"+q14concernedSocialSecurity+"</td><td>"+q15visitCSEC+"</td><td>"+q16recommendations+"</td></tr>";
 											
 											// var output = "<tr><td>"+q00firstName+" "+q00lastName+"</td><td>"+q00email+"</td><td>"+language+"</td><td>";
 											
@@ -141,7 +150,6 @@
 									
 											window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 											
-											alert(output);
 				
 				
 						
@@ -152,10 +160,12 @@
 
 						// device APIs are available
 						//
-						
+						function createFile(fileSystem) {
+							fileSystem.root.getFile("surveyOutput-Aug22.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+						}
 					
 						function gotFS(fileSystem) {
-							fileSystem.root.getFile("surveyOutput-aug19.txt", {create: false}, gotFileEntry, fail);
+							fileSystem.root.getFile("surveyOutput-Aug22.txt", {create: false}, gotFileEntry, createFile);
 							alert("gotFS");
 						}
 					
