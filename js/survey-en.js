@@ -248,11 +248,9 @@
 											
 											$("#output").append(output);					
 									
-											// window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+											window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 											
-											window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
-        										fileSystem.root.getFile("surveyOutput-Aug22.txt", { create: false }, gotFS, createFile);
-    										}, fail);
+											
 											
 				
 				
@@ -270,7 +268,8 @@
 						}
 					
 						function gotFS(fileSystem) {
-							fileSystem.root.getFile("surveyOutput-Aug22.txt", {create: false}, gotFileEntry, createFile);
+							fileSystem.root.getFile("surveyOutput-Aug22.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+							// fileSystem.root.getFile("surveyOutput-Aug22.txt", {create: false}, gotFileEntry, createFile);
 							alert("gotFS");
 						}
 					

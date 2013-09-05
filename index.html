@@ -5,11 +5,8 @@
 	<!-- <link href="css/cse-style.css" rel="stylesheet" type="text/css"/> -->
 	<script type="text/javascript" charset="utf-8" src="js/jquery.1.8.2.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-	<script type="text/javascript" charset="utf-8" src="GAPlugin.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/jquery.validate.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/survey-en.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/ganalytics.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/timer.js"></script>
 	<script type="text/javascript">
 		
 		
@@ -23,10 +20,7 @@
 			
 			<!-- device ready fuctions that can only run on the device happen here, then common device ready functions are fired -->
 			function gapOnlyDeviceReady() {				
-				// Initialize Google Analytics for the app
-				gaPlugin = window.plugins.gaPlugin;
-				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-43302718-1", 60);
-				gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "Survey Testing on my Phone");			
+				// Initialize Google Analytics for the app		
 				
 				nonGapDeviceReady();
 			}
