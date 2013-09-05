@@ -263,12 +263,12 @@
 						// device APIs are available
 						//
 						function createFile(fileSystem) {
-							fileSystem.root.getFile("surveyOutput-Aug22.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+							fileSystem.root.getFile("survey-results_"+currentdate.getDate()+"-"+(currentdate.getMonth()+1)+"-"+currentdate.getFullYear()+".txt", {create: true, exclusive: false}, gotFileEntry, fail);
 							alert("File Created");
 						}
 					
 						function gotFS(fileSystem) {
-							fileSystem.root.getFile("surveyOutput-Aug22.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+							fileSystem.root.getFile("survey-results_"+currentdate.getDate()+"-"+(currentdate.getMonth()+1)+"-"+currentdate.getFullYear()+".txt", {create: true, exclusive: false}, gotFileEntry, fail);
 							// fileSystem.root.getFile("surveyOutput-Aug22.txt", {create: false}, gotFileEntry, createFile);
 							alert("gotFS");
 						}
