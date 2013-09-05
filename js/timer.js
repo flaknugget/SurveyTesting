@@ -8,6 +8,7 @@ function timerStart()
 		countDownToTimeoutStop();
 		timeOutCounter=setTimeout(timerEnd, 3000);
 		$('.output').append('timerStart<br>');
+		
 	}
 
 function timerStop()
@@ -32,7 +33,7 @@ function timerEnd()
 	{
 		$('.output').append('<strong>Count Down has Ended</strong><br>');		
 		
-		window.countDownCount=10;
+		window.countDownCount=20;
 		$('.countDownTimer').html(window.countDownCount);
 		countDownToTimeoutStop();
 		window.countDownTimer=setInterval(function(){countDownToTimeout()},1000);

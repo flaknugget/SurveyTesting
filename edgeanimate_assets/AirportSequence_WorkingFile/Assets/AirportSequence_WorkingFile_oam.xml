@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://openajax.org/metadata" spec="1.0" id="tag:adobe.com,2012-03:edge:oam:compid:EDGE-21219353" name="AirportSequence_WorkingFile" version="1">
+
+  <description type="text/html"><![CDATA[Widget Exported from Adobe Edge]]></description>
+  <category name="Adobe Edge Animation"/>
+
+  <remarks>Compatible with: InDesign CS6, Dreamweaver</remarks>
+
+  <icon src="images/Poster.png" width="1280" height="683" />
+
+  <require type="other" src="AirportSequence_WorkingFile.html" />
+  <require type="other" src="images/CSE_Airport_Flattened.svg" />
+  <require type="other" src="images/CSE_Airport_Flattened2.svg" />
+  <require type="other" src="images/CSE_Airport_Layered.svg" />
+  <require type="other" src="images/CSE_Airport_Layers_Wifi.svg" />
+  <require type="other" src="images/preloader1.gif" />
+
+  <require type="javascript" src="AirportSequence_WorkingFile_edge.js" />
+  <require type="javascript" src="AirportSequence_WorkingFile_edgeActions.js" />
+  <require type="javascript" src="AirportSequence_WorkingFile_edgePreload.js" />
+  <require type="javascript" src="edge_includes/edge.2.0.0.min.js" />
+  <require type="javascript" src="edge_includes/jquery-1.7.1.min.js" />
+
+  <require type="image" src="images/beAware_iconSet.png" />
+  <require type="image" src="images/beginBtn_icon.png" />
+  <require type="image" src="images/CSE_Airport_flattened.jpg" />
+  <require type="image" src="images/CSE_Airport_Layered-01.png" />
+  <require type="image" src="images/everyone_icon.png" />
+  <require type="image" src="images/goBack_icon.png" />
+  <require type="image" src="images/goHome_icon.png" />
+  <require type="image" src="images/itPersonnel_icon.png" />
+  <require type="image" src="images/Poster.png" />
+  <require type="image" src="images/practitioner_icon.png" />
+  <require type="image" src="images/proceed_icon.png" />
+  <require type="image" src="images/scene-Background-addition.png" />
+  <require type="image" src="images/sceneExit_btn.jpg" />
+  <require type="image" src="images/selectorIcons_atom_icon.png" />
+  <require type="image" src="images/selectorIcons_binoc_icon.png" />
+  <require type="image" src="images/selectorIcons_clicked_atom_icon.png" />
+  <require type="image" src="images/selectorIcons_clicked_binoc_icon.png" />
+  <require type="image" src="images/selectorIcons_clicked_finder_icon.png" />
+  <require type="image" src="images/selectorIcons_clicked_icon.png" />
+  <require type="image" src="images/selectorIcons_clicked_unlock_icon.png" />
+  <require type="image" src="images/selectorIcons_clicked_wifi_icon.png" />
+  <require type="image" src="images/selectorIcons_comp_icon.png" />
+  <require type="image" src="images/selectorIcons_finder_icon.png" />
+  <require type="image" src="images/selectorIcons_unlock_icon.png" />
+  <require type="image" src="images/selectorIcons_wifi_icon.png" />
+  <require type="image" src="images/trustConnection_IconSet.png" />
+
+  <require type="folder" src="edge_includes" />
+  <require type="folder" src="images" />
+
+
+  <content><![CDATA[
+    <div class="EDGE-21219353"></div>
+  ]]></content>
+   
+  <properties name="Properties">
+    <property name="default-width" defaultValue="1280" hidden="true"/>
+    <property name="default-height" defaultValue="683" hidden="true"/>
+    <property name="resizable" defaultValue="false" hidden="true"/>
+    <property name="use-chrome-frame" defaultValue="false" hidden="true"/>
+    <property name="chrome-frame-installer" defaultValue="" hidden="true"/>
+    
+    
+    <property name="html-page" defaultValue="AirportSequence_WorkingFile.html" hidden="true"/>
+  </properties>
+
+</widget>

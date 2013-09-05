@@ -1,0 +1,289 @@
+@charset "iso-8859-1";
+/* Load in Custom Fonts from File(s) */
+@font-face {
+  font-family: gotham-med;
+  src: url("../fonts/Gotham-Medium.otf");
+  }
+  
+  @font-face {
+  font-family: gotham-med-ital;
+  src: url("../fonts/Gotham-MediumItalic.otf");
+  }
+  
+  @font-face {
+  font-family: gotham-book;
+  src: url("../fonts/Gotham-Book.otf");
+  }
+  
+  @font-face {
+  font-family: gotham-book-ital;
+  src: url("../fonts/Gotham-BookItalic.otf");
+  }
+
+
+/* CSS Reset */
+
+*{
+	margin: 0;
+	padding: 0;	
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* END CSS Reset */
+
+
+/* Common Page Interface Items */  
+
+
+html, body, .enContentWrap, .frContentWrap  {
+  width: 1280px;
+  background-color: #FFFFFF;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+  
+#topbar{
+	width: 1280px;
+	height: 37px;
+	background-color:#000000;
+}
+
+ #topbar .fip {
+	background: url(../svg/csec-fip.svg) no-repeat;
+  	background-size: contain;
+	display:block;
+	height: 35px;
+ }
+
+
+#contentContainer{
+	width: 1280px;
+	height: 682px;	
+}
+
+
+
+#bottombar{
+	width: 1280px;
+	height: 31px;
+	background-color:#000000;	
+}
+
+
+#timeoutBox {
+	position: fixed; 
+	z-index: 999; 
+	display: block; 
+	width: 100%; 
+	background-color: #F00; 
+	top: 400px;	
+	text-align: center;
+	font-family: gotham-book;
+	color: #ffffff;
+}
+
+#timeoutBox .countDownTimer {
+	font-size: 150%;		
+}
+
+
+/* Survey Styles */
+
+#survey-body {
+	
+	background-color:#26a9b9; 
+	
+}
+
+
+#surveyForm {
+	font-family: gotham-book;
+	color: #ffffff;
+	
+}
+
+#survey-bg {
+	background-image: url(../images/csec-survey_bg.png); 
+	background-repeat:no-repeat; 
+	background-position:bottom;
+	
+	overflow:scroll;
+	display: block;
+	width: 1280px;
+	height: 800px;
+}
+
+#survey-wrap {
+	margin: 0px auto;
+	padding: 5% 15%;	
+}
+
+
+#surveyForm h1 {
+		font-family: gotham-book;
+		font-weight: bold;
+		font-size: 28px;
+		margin: 25px 0 15px 0;
+}
+
+#surveyForm h3 {
+		font-family: gotham-book;
+		font-size: 24px;
+		margin: 25px 0 15px 0;
+}
+
+#surveyForm h4 {
+		font-family: gotham-book;
+		font-weight: bold;
+		font-size: 24px;
+		margin:35px 0 10px 0;
+}
+
+#surveyForm label {
+		font-family: gotham-book;
+		font-size: 19px;
+		padding-right: 20px;
+		padding-top: 5px;
+		clear:both;
+		display: block;
+}
+
+
+#surveyForm input[type="radio"], #surveyForm input[type="text"] {
+		margin: 0px 0 0px 0;
+}
+
+#surveyForm input[type="radio"] {
+		
+}
+
+#surveyForm input[type="radio"], #surveyForm input[type="checkbox"] {
+    display:none;
+}
+#surveyForm input[type="radio"] + label span.inputBtn {
+    display:inline-block;
+    width:18px;
+    height:18px;
+    margin:4px 7px 0 0;
+    vertical-align:bottom;
+	border-radius: 11px;
+	border: 2px #ffffff solid;
+    cursor:pointer;
+}
+
+#surveyForm input[type="checkbox"] + label span.inputBtn {
+    display:inline-block;
+    width:18px;
+    height:18px;
+    margin:4px 7px 0 0;
+    vertical-align:bottom;
+	border-radius: 0px;
+	border: 2px #ffffff solid;
+    cursor:pointer;
+}
+
+#surveyForm input[type="radio"]:checked + label span, #surveyForm input[type="checkbox"]:checked + label span.inputBtn {
+	background-color:#FFF;
+	color: #262262;
+}
+
+#surveyForm input[type="radio"]:checked + label, #surveyForm input[type="checkbox"]:checked + label {
+	color: #262262;
+}
+
+#surveyForm input[type="text"] {
+	font-family: gotham-book;
+	color: #ffffff;
+	background: none;
+	border: none;
+	border-bottom: 1px #ffffff solid;
+	padding: 1px 0 2px 0;
+	font-size: 120%;
+	margin-top: 10px;
+}
+
+#surveyForm input[type="submit"] {
+	background-color: #ffffff;	
+	border: none;	
+	margin-top: 20px;
+	padding: 15px 0;
+	font-family: gotham-book;
+	font-weight: bold;
+	font-size: 24px;
+	color: #262262;
+	width: 100%;
+	
+}
+
+#surveyForm textarea {
+	font-family: gotham-book;
+	color: #ffffff;
+	background: none;
+	border: 1px #ffffff solid;
+	padding: 1%;
+	font-size: 120%;
+	width: 98%;
+	height: 90px;
+}
+
+#surveyForm .otherField {
+	margin: 0px 0 0 10px;
+}
+
+#surveyForm .radioColA {
+	float:left; 
+	width: 35%; 
+	padding-right: 5%;	
+}
+
+#surveyForm .radioColB {
+	float:left; 
+	width: 60%;
+	
+}
+
+
